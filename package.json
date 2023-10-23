@@ -1,16 +1,15 @@
 {
-  "name": "q-tools",
+  "name": "sq-tools",
   "version": "1.0.0",
-  "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/q-tools.umd.js",
-  "module": "./dist/q-tools.es.js",
+  "main": "./dist/sq-tools.umd.js",
+  "module": "./dist/sq-tools.es.js",
   "exports": {
     ".": {
-      "import": "./dist/q-tools.es.js",
-      "require": "./dist/q-tools.umd.js"
+      "import": "./dist/sq-tools.es.js",
+      "require": "./dist/sq-tools.umd.js"
     }
   },
   "author": "hqh",
