@@ -1,0 +1,48 @@
+/**
+ * @description: 覆盖antd组件样式
+ */
+
+:deep(.ant-table-thead
+    > tr
+    > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before) {
+  height: 0;
+}
+
+:deep(.ant-table-thead > tr > th) {
+  font-weight: 700;
+}
+
+.ant-tree-switcher-noop {
+  display: none;
+}
+
+.ant-select-tree-switcher-noop {
+  display: none;
+}
+
+.ant-tree-switcher .ant-tree-switcher-icon,
+.ant-select-tree-switcher .ant-select-tree-switcher-icon {
+  font-size: 14px !important;
+  vertical-align: -3px;
+}
+.ant-tree-switcher,
+.ant-select-tree-switcher {
+  width: 16px;
+  margin-right: 0;
+}
+
+:deep(.ant-table-column-sorters) {
+  justify-content: center;
+}
+:deep(.ant-table-column-title) {
+  flex: none;
+}
+
+:deep(.ant-form-item-control) {
+  position: relative;
+  .ant-form-item-explain {
+    position: absolute;
+    bottom: -21px;
+    left: 0;
+  }
+}

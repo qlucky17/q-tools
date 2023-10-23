@@ -1,0 +1,83 @@
+:root {
+  --fn-primary-color: #0453f3;
+  --fn-link-hover-color: #2e7bff;
+  --fn-link-active-color: #003dcc;
+  --fn-text-color: #4e5969;
+  --fn-text-active-color: #1d2129;
+  --fn-text-gray-color: #86909c;
+  --fn-text-disable-color: #c9cdd4;
+  --fn-border-base-color: #d9d9d9;
+  --fn-border-split-color: #f0f2f5;
+  --fn-divider-color: #e5e6eb;
+  --fn-warning-color: #fa8c16;
+  --fn-danger-color: #f53f3f;
+}
+
+.primary-color,
+.primaryColor {
+  color: var(--fn-primary-color) !important;
+}
+.link-hover-color {
+  color: var(--fn-link-hover-color) !important;
+}
+.link-active-color {
+  color: var(--fn-link-hover-color) !important;
+}
+.text-color,
+.plainTextColor {
+  color: var(--fn-text-color) !important;
+}
+.text-active-color,
+.primaryTextColor {
+  color: var(--fn-text-active-color) !important;
+}
+.text-gray-color,
+.greyTextColor {
+  color: var(--fn-text-gray-color) !important;
+}
+.text-disable-color {
+  color: var(--fn-text-disable-color) !important;
+}
+.warning-color,
+.warningTextColor {
+  color: var(--fn-warning-color) !important;
+}
+.danger-color,
+.redTextColor {
+  color: var(--fn-danger-color) !important;
+}
+
+.ellipsis {
+  @include ellipsis();
+}
+.line-clamp2 {
+  @include line-clamp(2);
+}
+.line-clamp3 {
+  @include line-clamp(3);
+}
+
+.anticon svg {
+  vertical-align: unset;
+}
+
+.mini-scrollbar {
+  &::-webkit-scrollbar {
+    /* 滚动条整体样式 */
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    /* 滚动条里面小方块 */
+    border-radius: 5px;
+    // background-color: rgb(0 0 0 / 51%);
+    background-color: #c9cdd4;
+
+    &:active {
+      background: #86909c;
+    }
+  }
+}

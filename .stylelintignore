@@ -1,0 +1,13 @@
+/dist/*
+/node_modules/
+# 其他类型文件
+*.js
+*.jsx
+*.ts
+*.tsx
+*.jpg
+*.woff
+
+
+
+
