@@ -12,7 +12,7 @@ export default defineConfig(({ command, mode }: ConfigEnv) => {
   const root = process.cwd();
   const env = loadEnv(mode, root);
   const viteEnv = wrapperEnv(env);
-  const { VITE_PORT } = viteEnv;
+  const { VITE_PORT, VITE_DROP_CONSOLE } = viteEnv;
   const isBuild = command === 'build';
 
   return {
@@ -68,6 +68,14 @@ export default defineConfig(({ command, mode }: ConfigEnv) => {
           },
         },
       },
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          // drop_console: VITE_DROP_CONSOLE,
+          drop_debugger: VITE_DROP_CONSOLE,
+        },
+      },
+      // outDir: `dist`,
       chunkSizeWarningLimit: 2000,
     },
   };

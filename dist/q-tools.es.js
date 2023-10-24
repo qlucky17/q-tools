@@ -1,4 +1,6 @@
-const e = (r, t) => r + t;
+const sum = (a, b) => {
+  return a + b;
+};
 export {
-  e as sum
+  sum
 };
