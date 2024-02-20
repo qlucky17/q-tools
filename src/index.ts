@@ -26,3 +26,25 @@ export const mobileDesensitize = (mobile) => {
   const reg = /(\d{3})\d*(\d{4})/;
   return mobile.replace(reg, `$1****$2`);
 };
+
+export function loadImgs(
+  urls: Array<string> = [],
+  crossOrigin?: string
+): Promise<Array<HTMLImageElement | null>> {
+  const loadImg = (url: string): Promise<HTMLImageElement | null> => {
+    return new Promise((resolve) => {
+      if (!url) resolve(null);
+      const image = new Image();
+      image.src = url;
+      image.setAttribute('crossOrigin', crossOrigin || 'anonymous');
+      image.onload = () => {
+        resolve(image);
+      };
+      image.onerror = () => {
+        resolve(null);
+      };
+    });
+  };
+  const promises = urls.map((url: string): Promise<HTMLImageElement | null> => loadImg(url));
+  return Promise.all(promises);
+}
