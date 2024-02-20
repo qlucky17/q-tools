@@ -27,6 +27,12 @@ export const mobileDesensitize = (mobile) => {
   return mobile.replace(reg, `$1****$2`);
 };
 
+// 判断文字中是否含有中文字符
+export const hasChinese = (str: string) => {
+  const reg = /[\u4e00-\u9fa5]/gi;
+  return str.match(reg);
+};
+
 export function loadImgs(
   urls: Array<string> = [],
   crossOrigin?: string

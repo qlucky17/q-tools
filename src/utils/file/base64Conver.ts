@@ -1,3 +1,5 @@
+import ImageCompressor from 'js-image-compressor';
+
 /**
  * @description: base64 to blob
  */
@@ -39,3 +41,50 @@ export function urlToBase64(url: string, mineType?: string): Promise<string> {
     img.src = url;
   });
 }
+
+/**
+ * @description: url to File
+ */
+export const urlToFile = async (image: {
+  url: string;
+  name: string;
+  type?: string;
+  isBase64?: boolean;
+}) => {
+  const base64 = image.isBase64 ? image.url : await urlToBase64(image.url, image.type);
+  const file = new File([dataURLtoBlob(base64)], image.name, { type: image?.type || 'image/jpeg' });
+  return file;
+};
+
+export const urlToFiles = (
+  images: Array<{ url: string; name: string; type?: string; isBase64?: boolean }>
+) => {
+  return Promise.all(images.map((image) => urlToFile(image)));
+};
+
+/**
+ * @description: 图片压缩
+ */
+export const compressImage = (file, options?) => {
+  return new Promise((resolve, reject) => {
+    new ImageCompressor({
+      file: file,
+      quality: options?.quality || 0.6,
+      maxWidth: options?.size,
+      maxHeight: options?.size,
+      convertSize: Infinity,
+      loose: true,
+      redressOrientation: true,
+      // beforeCompress: function (result) {
+      //   console.log('压缩之前图片尺寸大小: ', result);
+      // },
+      success: function (result) {
+        // console.log('压缩之后图片尺寸大小: ', result);
+        resolve(new File([result], result.name, { type: result.type }));
+      },
+      error(e) {
+        reject(e);
+      },
+    });
+  });
+};

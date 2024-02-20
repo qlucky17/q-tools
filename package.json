@@ -51,6 +51,7 @@
     "dotenv": "16.0.1",
     "esdk-obs-browserjs": "3.22.3",
     "js-cookie": "3.0.1",
+    "js-image-compressor": "^2.0.0",
     "mitt": "3.0.0",
     "mockjs": "1.1.0",
     "nprogress": "0.2.0",

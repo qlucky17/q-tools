@@ -31,6 +31,7 @@ export function getRecentDateRange(n, options = { timestamp: true, format: DATE_
   if (options.timestamp) return [startTime.valueOf(), endTime.valueOf()];
   return [startTime.format(options.format), endTime.format(options.format)];
 }
+
 export function getRecentDateRangeFromTo(
   n,
   options = { timestamp: true, format: DATE_TIME_FORMAT }
@@ -44,6 +45,7 @@ export function getRecentDateRangeFromTo(
   if (options.timestamp) return { from: startTime.valueOf(), to: endTime.valueOf() };
   return { from: startTime.format(options.format), to: endTime.format(options.format) };
 }
+
 export function getCurrMonthFromTo(options = { timestamp: true, format: DATE_TIME_FORMAT }) {
   if (options.timestamp)
     return {
@@ -55,6 +57,7 @@ export function getCurrMonthFromTo(options = { timestamp: true, format: DATE_TIM
     to: dayjs().endOf('month').format(options.format),
   };
 }
+
 export function getLastLastSevenDayFromTo(options: any) {
   if (options.timestamp)
     return {
@@ -78,6 +81,7 @@ export function getLastLastSevenDayFromTo(options: any) {
       .format(options.format),
   };
 }
+
 export function getLastSevenDayFromTo(options: any) {
   if (options.timestamp)
     return {
@@ -101,6 +105,7 @@ export function getLastSevenDayFromTo(options: any) {
       .format(options.format),
   };
 }
+
 export function getLastDaysFromTo(number, options: any) {
   if (options.timestamp)
     return {
@@ -124,4 +129,5 @@ export function getLastDaysFromTo(number, options: any) {
       .format(options.format),
   };
 }
+
 export const dateUtil = dayjs;
