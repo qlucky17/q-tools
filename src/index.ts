@@ -10,7 +10,9 @@ export const loadJS = (url: string) => {
   });
 };
 
-export const sleep = (timeout = 0) => new Promise((resolve) => setTimeout(resolve, timeout));
+export const sleep = (timeout = 0) => {
+  return new Promise((resolve) => setTimeout(resolve, timeout));
+};
 
 export const getBase64 = (file: File) => {
   return new Promise((resolve, reject) => {
