@@ -1,17 +1,22 @@
 # 简介
+
 - 前端通用方法工具库。
 
 # 使用方法：
+
 ### 1. import：
-  ```javascript
+
+```javascript
 npm install q-tools;
-import { sum } from 'q-tools';
-const result = sum(10, 20);
+import { mobileDesensitize } from 'q-tools';
+const result = mobileDesensitize(15012345678);
 ```
+
 ### 2. script:
+
 ```javascript
 <script src="q-tools.umd.js"></script>
 <script>
-  const result = QTools.sum(10, 20);
+  const result = QTools.mobileDesensitize(15012345678);
 </script>
 ```
